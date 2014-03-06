@@ -8,7 +8,6 @@ exports.list = function(req, res){
     var users;
     pool.query('SELECT name, email from users', function(err, results, fields) {
         if (err) throw err;
-        console.log('The first user name: ', results[0].name);
         res.render('users', { userlist: results });
     });
 };
