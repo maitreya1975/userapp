@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1= title
-    if userlist === undefined
+    if userlist.length === 0
         p No users. Add one now!
     else 
         p User List:
