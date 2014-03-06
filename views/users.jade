@@ -2,11 +2,15 @@ extends layout
 
 block content
     h1= title
-    p User List:
-    #userlist
-    for user in userlist
-        h2= user.name
-        .email= user.email
+    if userlist === undefined
+        p No users. Add one now!
+    else 
+        p User List:
+        #userlist
+        for user in userlist
+            h2= user.name
+            .email= user.email
+
     #addform
     form(method="post" action="/users")
         p 
